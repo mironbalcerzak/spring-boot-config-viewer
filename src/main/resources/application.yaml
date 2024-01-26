@@ -1,0 +1,82 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring config viewer microservices
+  h2:
+    console:
+      enabled: false
+  graphql:
+    graphiql:
+      enabled: false
+
+config-viewer:
+  client:
+    enabled: true
+    url: http://localhost:${server.port}/publish
+  server:
+    enabled: true
+    remove-ignored-properties: true
+    ignored-properties-names:
+      - "=::"
+      - "ALLUSERSPROFILE"
+      - "APPDATA"
+      - "com.sun.management.jmxremote"
+      - "CommonProgramFiles"
+      - "CommonProgramFiles(x86)"
+      - "CommonProgramW6432"
+      - "COMPUTERNAME"
+      - "ComSpec"
+      - "CONSOLE_LOG_CHARSET"
+      - "DriverData"
+      - "file.*"
+      - "FILE_LOG_CHARSET"
+      - "HOMEDRIVE"
+      - "HOMEPATH"
+      - "IDEA_INITIAL_DIRECTORY"
+      - "intellij.*"
+      - "java.*"
+      - "JAVA_HOME"
+      - "jboss.*"
+      - "jdk.*"
+      - "line.separator"
+      - "LOCALAPPDATA"
+      - "LOGGED_APPLICATION_NAME"
+      - "LOGONSERVER"
+      - "M2_HOME"
+      - "native.encoding"
+      - "NUMBER_OF_PROCESSORS"
+      - "NVM_HOME"
+      - "NVM_SYMLINK"
+      - "OneDrive"
+      - "OneDriveConsumer"
+      - "OS"
+      - "os.*"
+      - "Path"
+      - "path.separator"
+      - "PATHEXT"
+      - "PID"
+      - "PROCESSOR_ARCHITECTURE"
+      - "PROCESSOR_IDENTIFIER"
+      - "PROCESSOR_LEVEL"
+      - "PROCESSOR_REVISION"
+      - "ProgramData"
+      - "ProgramFiles"
+      - "ProgramFiles(x86)"
+      - "ProgramW6432"
+      - "PSModulePath"
+      - "PUBLIC"
+      - "SESSIONNAME"
+      - "sun.*"
+      - "SystemDrive"
+      - "SystemRoot"
+      - "TEMP"
+      - "TMP"
+      - "user.*"
+      - "USERDOMAIN"
+      - "USERDOMAIN_ROAMINGPROFILE"
+      - "USERNAME"
+      - "USERPROFILE"
+      - "windir"
+      - "ZES_ENABLE_SYSMAN"
